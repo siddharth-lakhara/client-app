@@ -19,7 +19,6 @@ class Login extends React.Component {
 
     onSubmit = () => {
         const { userName, projectId } = this.state;
-        console.log("onSubmit");
         if (projectId !== '' && userName !== '' ){
             this.props.login(userName, projectId);
         } else {

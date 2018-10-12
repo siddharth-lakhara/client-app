@@ -5,7 +5,7 @@ import './App.css';
 
 class App extends Component {
   state={
-    loggedIn: false,
+    loggedIn: true,
   }
   
   login = () =>{
