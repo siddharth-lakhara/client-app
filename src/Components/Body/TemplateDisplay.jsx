@@ -28,12 +28,10 @@ class TemplateDisplay extends Component {
 
     render() {
         const { backPage, nextPage } = this;
-        
-
         return (
             <div className="canvas">
                 <Canvas data={this.props.data} pageNumber={this.state.pageNumber} />
-                <PageScroll backPage={backPage} nextPage={nextPage} />
+                <PageScroll backPage={backPage} nextPage={nextPage} pageNumber={this.state.pageNumber}/>
             </div>
         );
     }

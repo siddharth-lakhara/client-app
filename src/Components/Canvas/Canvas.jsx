@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import BulletList from '../Templates/BulletList';
+import LineChart from '../Templates/LineChart';
 import './Canvas.css';
 
 const lookupTemplate = {
   'Bullet List': BulletList,
-  'Line Chart': (<div>Template to be Implemented</div>),
+  'Line Chart': LineChart,
 };
 
 const RenderAllPages = ({ pagesList, pageNumber }) => {
@@ -13,18 +14,17 @@ const RenderAllPages = ({ pagesList, pageNumber }) => {
     const Pages = pagesList.map((p) => {
       const { template, ...data } = p;
       const TemplateName = lookupTemplate[p.template];
-      if (p.template === 'Bullet List') {
-        return (
-          <TemplateName data={data} />
-        );
-      }
-      return (TemplateName);
+      //   if (p.template === 'Bullet List') {
+      return (
+        <TemplateName data={data} />
+      );
+    //   }
+    //   return (TemplateName);
     });
     return Pages[pageNumber];
   }
   return <div>Loading</div>;
 };
-
 
 class Canvas extends Component {
   render() {
