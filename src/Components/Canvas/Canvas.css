@@ -1,8 +1,8 @@
 .canvas-frame {
+    display: flex;
     width:800px;
     align-self: center;
     height:90%;
-    float:center;
     z-index: 10;
     background-image: url('../../assets/background.jpeg');
     color: white;
