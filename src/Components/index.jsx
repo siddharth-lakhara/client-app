@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Login from './Login';
+import Body from './Body/Body';
 
 class Workspace extends Component {
   state = {
     userName: '',
-    projectId: ''
+    projectId: '',
   }
 
   login=(userName, projectId)=>{
     this.setState({
       userName, 
-      projectId
-    })
+      projectId,
+    });
+    this.props.login();
   }
 
   render() {
     const {login} = this;
-    if (window.localStorage.login === 'true') {
+    const {userName, projectId} = this.state;
+    if (this.props.loggedIn === true) {
       return (
-        <Login />
+        <Body userName={userName} projectId={projectId} />
       );
     }
     return (

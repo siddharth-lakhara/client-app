@@ -9,13 +9,8 @@ class Header extends Component {
     this.state = {};
   }
 
-  logOut = () => { 
-    window.localStorage.login = false; 
-    window.location.reload();
-  }
-
   render() {
-    const {logOut} = this;
+    const { login, loggedIn } = this.props;
 
     return (
       <div className="header-main">
@@ -28,8 +23,7 @@ class Header extends Component {
           </div>
           <div>APP</div>
         </div>
-        <div className="signout" style={{ display: !(window.localStorage.login === 'true') ? 'none' : '' }} onClick={logOut}>Sign Out</div>
-        {/* = {!(window.localStorage.login === 'true') ? 'none' : ''} */}
+        <div className="signout" style={{ display: (loggedIn === true) ? '' : 'none' }} onClick={login}> Sign Out</div>
       </div>
     );
   }

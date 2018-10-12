@@ -4,11 +4,21 @@ import Workspace from './Components';
 import './App.css';
 
 class App extends Component {
+  state={
+    loggedIn: false,
+  }
+  
+  login = () =>{
+    const {loggedIn} = this.state;
+    this.setState({
+      loggedIn: !loggedIn,
+    })
+  }
   render() {
     return (
       <div className="App">
-        <Header />
-        <Workspace />
+        <Header loggedIn={this.state.loggedIn} login={this.login} />
+        <Workspace loggedIn={this.state.loggedIn} login={this.login} />
       </div>
     );
   }

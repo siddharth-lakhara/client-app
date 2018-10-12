@@ -21,9 +21,7 @@ class Login extends React.Component {
         const { userName, projectId } = this.state;
         console.log("onSubmit");
         if (projectId !== '' && userName !== '' ){
-            window.localStorage.login = true;
             this.props.login(userName, projectId);
-            window.location.reload();
         } else {
             alert("Enter userName and projectId");
         }
@@ -32,12 +30,11 @@ class Login extends React.Component {
     render() {
         const { userName, projectId } = this.state;
         const { onChange, onSubmit } = this;
-        // window.localStorage.login = true;
-        if (window.localStorage.login === "true") {
+        if (this.props.loggedIn === true) {
             return (
                 <div className="login">
                     <div className="login-border">
-                        You are already logged in!! <div className="login-goBack" onClick={() => { window.localStorage.login = true; window.location.reload(); }}>Go back</div>
+                        You are already logged in!! <div className="login-goBack" onClick={() => { this.props.login(); }}>Go back</div>
                     </div>
                 </div>
             );
