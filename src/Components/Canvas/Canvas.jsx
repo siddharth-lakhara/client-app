@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import BulletList from '../Templates/BulletList';
 import LineChart from '../Templates/LineChart';
+import Feedback from '../Templates/Feedback';
 import './Canvas.css';
 
 const lookupTemplate = {
   'Bullet List': BulletList,
   'Line Chart': LineChart,
+  Feedback,
 };
 
 const RenderAllPages = ({ pagesList, pageNumber }) => {
