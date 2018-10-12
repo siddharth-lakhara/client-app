@@ -1,30 +1,8 @@
 import React, { Component } from 'react';
 import PageScroll from '../PageScroll';
-import Template1 from '../Templates/Template1';
+import Canvas from '../Canvas/Canvas';
+import "./TemplateDisplay.css";
 
-const lookupTemplate = {
-    "Bullet List": Template1,
-    "Line Chart": (<div>Template to be Implemented</div>)
-}
-
-const RenderAllPages = ({ pagesList, pageNumber }) => {
-    if (pagesList) {
-        console.log('page',pagesList);
-        const Pages = pagesList.map((p) => {
-            const {template, ...data} = p;
-            const TemplateName = lookupTemplate[p.template];
-            if (p.template === "Bullet List") {
-                return (
-                <TemplateName data={data} />
-                );
-            } else {
-                return (TemplateName);
-            }
-        });
-        return Pages[pageNumber];
-    }
-    return <div>Something</div>;
-}
 
 class TemplateDisplay extends Component {
     state={
@@ -47,16 +25,14 @@ class TemplateDisplay extends Component {
             pageNumber: pageNumber,
         });
     }
+
     render() {
-        const { data } = this.props;
-        // console.log('pages', data.pages);
-        const { pageNumber } = this.state;
         const { backPage, nextPage } = this;
-        // const pageToDisplay = <div>Something</div>;
-        const pageToDisplay = <RenderAllPages pagesList={data.pages} pageNumber={pageNumber} />;
+        
+
         return (
-            <div>
-                {pageToDisplay}
+            <div className="canvas">
+                <Canvas data={this.props.data} pageNumber={this.state.pageNumber} />
                 <PageScroll backPage={backPage} nextPage={nextPage} />
             </div>
         );

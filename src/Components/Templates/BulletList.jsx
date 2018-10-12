@@ -1,7 +1,7 @@
 import React from 'react';
-import './Template1.css';
+import './BulletList.css';
 
-const Template1 = ({ data }) => {
+const BulletList = ({ data }) => {
   const {
     head, listItems,
   } = data;
@@ -19,4 +19,4 @@ const Template1 = ({ data }) => {
   );
 };
 
-export default Template1;
+export default BulletList;

@@ -1,19 +1,13 @@
-.back-button{
- flex:1;
- display: flex;
- justify-content: flex-start;
- padding-left:10px;
- align-items: center;
-}
 
 .logo-position{
- flex:10;
+  flex: 12;
  display: flex;
  justify-content: center;
 }
 
 .signout{
-  flex:1;
+  /* flex:1; */
+  padding-right: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,12 +16,12 @@
 
 .header-main {
     height: 200px;
-    width:100vw;
+    width:100%;
     background-color: #3b73b3;
     align-items: center;
     color: #fff;
     font-weight: 300;
-    min-height: 45px;
+    min-height: 77px;
     height: 6.5vh;
     font-family:arial;
     font-weight: 700;
@@ -37,7 +31,10 @@
     align-items: center;
 
   }
-  
+  .quick{
+    display: flex;
+    align-items: center;
+  }
   .app-icon {
   max-height: 6.5vh;
   /* height: 6.5vh */
