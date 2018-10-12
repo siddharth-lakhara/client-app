@@ -5,8 +5,8 @@ import Body from './Body/Body';
 
 class Workspace extends Component {
   state = {
-    userName: 'test1',
-    projectId: 'project1',
+    userName: '',
+    projectId: '',
   }
 
   login=(userName, projectId)=>{

@@ -10,7 +10,7 @@ ReactGA.pageview(window.location.pathname + window.location.search);
 
 class App extends Component {
   state={
-    loggedIn: true,
+    loggedIn: false,
   }
   
   login = () =>{
