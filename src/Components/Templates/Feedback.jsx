@@ -42,8 +42,8 @@ const BulletList = ({ data }) => {
         })}
       </div>
       <div className="bullet">
-        <div>Have any questions?</div>
-        <textarea onChange={event => addQuestion(event.target.value)} />
+        <div className="bullet-qn">Have any questions?</div>
+        <textarea onChange={event => addQuestion(event.target.value)} className="bullet-txt" />
       </div>
 
     </div>
