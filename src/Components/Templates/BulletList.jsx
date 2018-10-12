@@ -7,12 +7,13 @@ const BulletList = ({ data }) => {
   } = data;
   const { content, ...headStyle } = head;
   return (
-    <div className="template1">
-      <h1 style={headStyle}>{content}</h1>
+    <div className="BulletList">
+      <h1 style={headStyle} className="BulletList-h1">{content}</h1>
       <ul>
         {listItems.map((item) => {
           const { content, ...contentStyle } = item;
-          return (<li style={contentStyle}>{content}</li>);
+          contentStyle.fontSize = Number(contentStyle.fontSize);
+          return (<li style={contentStyle} className="BulletList-li">{content}</li>);
         })}
       </ul>
     </div>
