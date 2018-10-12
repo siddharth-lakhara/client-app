@@ -1,5 +1,22 @@
 import React from 'react';
 import './BulletList.css';
+import ReactGA from 'react-ga';
+
+const addQuestion = (value) => {
+  ReactGA.event({
+    category: 'Input Manipulation',
+    action: 'Asked a question',
+  });
+  console.log('value', value);
+};
+
+const changeFeedback = (value) => {
+  console.log('feedback', value);
+  ReactGA.event({
+    category: 'Input Manipulation',
+    action: 'Changed Feedback',
+  });
+};
 
 const BulletList = ({ data }) => {
   const {
@@ -15,7 +32,7 @@ const BulletList = ({ data }) => {
           contentStyle.fontSize = Number(contentStyle.fontSize);
           return (
             <div>
-              <input type="radio" name="question" style={{ margin: '30px 0px 0px 120px' }} />
+              <input type="radio" name="question" style={{ margin: '30px 0px 0px 120px' }} onChange={event => changeFeedback(event.target.value)} />
               <label style={contentStyle} className="feedback-radio">
                 {content}
               </label>
@@ -26,7 +43,7 @@ const BulletList = ({ data }) => {
       </div>
       <div className="bullet">
         <div>Have any questions?</div>
-        <textarea />
+        <textarea onChange={event => addQuestion(event.target.value)} />
       </div>
 
     </div>
