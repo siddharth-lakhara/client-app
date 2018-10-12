@@ -17,5 +17,15 @@
 }
 
 .bullet {
-  text-align: center;
+  margin: 30px 0px 0px 120px;
+
+}
+
+.bullet-qn {
+  margin: 5px;
+}
+
+.bullet-txt {
+  width: 500px;
+  height: 50px;
 }

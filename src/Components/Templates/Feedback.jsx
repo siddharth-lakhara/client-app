@@ -25,8 +25,8 @@ const BulletList = ({ data }) => {
         })}
       </div>
       <div className="bullet">
-        <div>Have any questions?</div>
-        <textarea />
+        <div className="bullet-qn">Have any questions?</div>
+        <textarea className="bullet-txt" />
       </div>
 
     </div>
